@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-question3-a2122413-4ea0-4aa4-9819-330b9b1ef364</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.11" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+</Project>
